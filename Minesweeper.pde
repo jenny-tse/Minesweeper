@@ -105,7 +105,8 @@ public class MSButton
     } else if (mines.contains(this)) {
       displayLosingMessage();
     } else if (countMines(myRow, myCol) > 0) {
-      myLabel = Integer.toString(countMines(myRow, myCol));
+      //myLabel = Integer.toString(countMines(myRow, myCol));
+      setLabel(countMines(myRow,myCol));
     } else {
       for (int r = myRow - 1; r <= myRow + 1; r++) {
         for (int c = myCol - 1; c <= myCol + 1; c++) {
@@ -121,7 +122,7 @@ public class MSButton
     if (flagged)
       fill(0);
     else if ( clicked && mines.contains(this) ) 
-      fill(255, 0,0);
+      fill(255, 0, 0);
     else if (clicked)
       fill( 100 );
     else 
